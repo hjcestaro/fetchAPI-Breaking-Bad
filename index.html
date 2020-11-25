@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Breaking Bad - API</title>
+</head>
+
+<body>
+    <header>
+        <img src="logo-BB.png" alt="Breaking Bad Logo" />
+    </header>
+
+    <div class="container">
+        <div class="card">
+
+        </div>
+    </div>
+</body>
+
+<script>
+
+    const url = 'https://www.breakingbadapi.com/api/characters'
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => { data.map(item => document.querySelector('.card').innerHTML += `<div class='teste'><img src=${item.img} /> <h1>${item.name}</h1> </div>`) })
+
+</script>
+
+</html>
